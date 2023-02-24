@@ -42,6 +42,13 @@
             this.labQuantity = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.labTitle = new System.Windows.Forms.Label();
+            this.mnuSum = new System.Windows.Forms.ToolStripMenuItem();
+            this.labDiscount = new System.Windows.Forms.Label();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.txtNetDue = new System.Windows.Forms.TextBox();
+            this.labNetDue = new System.Windows.Forms.Label();
+            this.chkNorDis = new System.Windows.Forms.CheckBox();
+            this.chkDisStu = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.grBoxTitle.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +60,7 @@
             this.mnuFile});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(633, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(615, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,9 +69,10 @@
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnunew,
             this.mnuCal,
-            this.mnuexit});
+            this.mnuexit,
+            this.mnuSum});
             this.mnuFile.Name = "mnuFile";
-            this.mnuFile.Size = new System.Drawing.Size(50, 26);
+            this.mnuFile.Size = new System.Drawing.Size(50, 24);
             this.mnuFile.Text = " File";
             this.mnuFile.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
@@ -91,6 +99,12 @@
             // 
             // grBoxTitle
             // 
+            this.grBoxTitle.Controls.Add(this.chkDisStu);
+            this.grBoxTitle.Controls.Add(this.chkNorDis);
+            this.grBoxTitle.Controls.Add(this.labNetDue);
+            this.grBoxTitle.Controls.Add(this.txtNetDue);
+            this.grBoxTitle.Controls.Add(this.txtDiscount);
+            this.grBoxTitle.Controls.Add(this.labDiscount);
             this.grBoxTitle.Controls.Add(this.txtExPrice);
             this.grBoxTitle.Controls.Add(this.labExPrice);
             this.grBoxTitle.Controls.Add(this.txtPrice);
@@ -102,7 +116,7 @@
             this.grBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grBoxTitle.Location = new System.Drawing.Point(34, 43);
             this.grBoxTitle.Name = "grBoxTitle";
-            this.grBoxTitle.Size = new System.Drawing.Size(564, 342);
+            this.grBoxTitle.Size = new System.Drawing.Size(543, 432);
             this.grBoxTitle.TabIndex = 1;
             this.grBoxTitle.TabStop = false;
             this.grBoxTitle.Text = "BookSale";
@@ -173,16 +187,77 @@
             this.labTitle.TabIndex = 0;
             this.labTitle.Text = "Title";
             // 
+            // mnuSum
+            // 
+            this.mnuSum.Name = "mnuSum";
+            this.mnuSum.Size = new System.Drawing.Size(224, 26);
+            this.mnuSum.Text = "Summary";
+            this.mnuSum.Click += new System.EventHandler(this.mnuSum_Click);
+            // 
+            // labDiscount
+            // 
+            this.labDiscount.AutoSize = true;
+            this.labDiscount.Location = new System.Drawing.Point(30, 295);
+            this.labDiscount.Name = "labDiscount";
+            this.labDiscount.Size = new System.Drawing.Size(76, 20);
+            this.labDiscount.TabIndex = 8;
+            this.labDiscount.Text = "Discount";
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Location = new System.Drawing.Point(181, 289);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.ReadOnly = true;
+            this.txtDiscount.Size = new System.Drawing.Size(143, 26);
+            this.txtDiscount.TabIndex = 9;
+            // 
+            // txtNetDue
+            // 
+            this.txtNetDue.Location = new System.Drawing.Point(181, 346);
+            this.txtNetDue.Name = "txtNetDue";
+            this.txtNetDue.ReadOnly = true;
+            this.txtNetDue.Size = new System.Drawing.Size(143, 26);
+            this.txtNetDue.TabIndex = 10;
+            // 
+            // labNetDue
+            // 
+            this.labNetDue.AutoSize = true;
+            this.labNetDue.Location = new System.Drawing.Point(30, 352);
+            this.labNetDue.Name = "labNetDue";
+            this.labNetDue.Size = new System.Drawing.Size(71, 20);
+            this.labNetDue.TabIndex = 11;
+            this.labNetDue.Text = "Net Due";
+            // 
+            // chkNorDis
+            // 
+            this.chkNorDis.AutoSize = true;
+            this.chkNorDis.Location = new System.Drawing.Point(348, 260);
+            this.chkNorDis.Name = "chkNorDis";
+            this.chkNorDis.Size = new System.Drawing.Size(157, 24);
+            this.chkNorDis.TabIndex = 12;
+            this.chkNorDis.Text = "Normal Discount";
+            this.chkNorDis.UseVisualStyleBackColor = true;
+            // 
+            // chkDisStu
+            // 
+            this.chkDisStu.AutoSize = true;
+            this.chkDisStu.Location = new System.Drawing.Point(348, 309);
+            this.chkDisStu.Name = "chkDisStu";
+            this.chkDisStu.Size = new System.Drawing.Size(151, 24);
+            this.chkDisStu.TabIndex = 13;
+            this.chkDisStu.Text = "Distinct Student";
+            this.chkDisStu.UseVisualStyleBackColor = true;
+            // 
             // BookSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 450);
+            this.ClientSize = new System.Drawing.Size(615, 502);
             this.Controls.Add(this.grBoxTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "BookSale";
-            this.Text = "Form1";
+            this.Text = "BookSale";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -209,6 +284,13 @@
         private System.Windows.Forms.Label labQuantity;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label labTitle;
+        private System.Windows.Forms.ToolStripMenuItem mnuSum;
+        private System.Windows.Forms.CheckBox chkNorDis;
+        private System.Windows.Forms.Label labNetDue;
+        private System.Windows.Forms.TextBox txtNetDue;
+        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.Label labDiscount;
+        private System.Windows.Forms.CheckBox chkDisStu;
     }
 }
 

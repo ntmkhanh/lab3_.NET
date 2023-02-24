@@ -45,12 +45,17 @@ namespace lab3
         {
             try
             {
-                mBookSale = new clsBookSale();
+                mBookSale = new clsStudentBookSale(txtTitle.Text, Convert.ToInt32(txtQuantity.Text), Convert.ToDecimal(txtPrice.Text), chkNorDis.Checked, chkDisStu.Checked);
                 mBookSale.Title = txtTitle.Text;
-                mBookSale.Quatity = Convert.ToInt32(txtQuantity.Text);
+                mBookSale.Quantity = Convert.ToInt32(txtQuantity.Text);
                 mBookSale.Price = Convert.ToDecimal(txtPrice.Text);
+                mBookSale.Discount=chkNorDis.Checked;
 
+
+                txtPrice.Text = mBookSale.Price.ToString("C");
                 txtExPrice.Text = mBookSale.ExtendedPrice().ToString("C");
+                txtDiscount.Text = mBookSale.DiscountAmount().ToString("C");
+                txtNetDue.Text = mBookSale.NetDue().ToString("C");
             }
             catch (Exception ex)
             {
@@ -60,7 +65,15 @@ namespace lab3
 
         private void mnuexit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           Application.Exit();
+           //this.Close();
         }
-    }
+
+        private void mnuSum_Click(object sender, EventArgs e)
+        {
+            string strMessage = "Sales Total: " + clsBookSale.SalesTotal.ToString("C") + "\nSales Count: " + clsBookSale.SalesTotal.ToString();
+            MessageBox.Show(strMessage, "Summary Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        }
 }
