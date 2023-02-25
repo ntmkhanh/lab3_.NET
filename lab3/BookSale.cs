@@ -71,7 +71,7 @@ namespace lab3
 
         private void mnuSum_Click(object sender, EventArgs e)
         {
-            string strMessage = "Sales Total: " + clsBookSale.SalesTotal.ToString("C") + "\nSales Count: " + clsBookSale.SalesTotal.ToString();
+            string strMessage = "Sales Total: " + clsBookSale.SalesTotal.ToString("C") + "\nSales Count: " + clsBookSale.SalesCount.ToString();
             MessageBox.Show(strMessage, "Summary Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
