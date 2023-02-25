@@ -61,8 +61,8 @@ namespace lab3
         public decimal ExtendedPrice()
         {
             decimal decExtendedPrice = intQuantity * decPrice;
-            decSalesTotal += decExtendedPrice;
-            intSalesCount += 1;
+            //decSalesTotal += decExtendedPrice;
+            //intSalesCount += 1;
             return decExtendedPrice;
         }
         public static decimal SalesTotal
